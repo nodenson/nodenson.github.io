@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rot Sentinel · Public Evidence Dossiers · Grid Accountability</title>
+    <meta name="description" content="Documentary records, grid accountability analysis, and primary source verifications. An inquiry is not an adjudication.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0C1014;
+            --steel: #1B2733;
+            --bone: #EDE6D6;
+            --texas-gold: #C6A23C;
+            --flag-red: #B11A2B;
+            --gold-soft: #9A8A5A;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--ink);
+            color: var(--bone);
+            font-family: 'Barlow', sans-serif;
+            line-height: 1.6;
+            border-left: 8px solid var(--texas-gold);
+            border-right: 4px solid var(--flag-red);
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--steel);
+            border-bottom: 2px solid var(--texas-gold);
+            padding: 2.5rem 5%;
+        }
+        .portal-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--texas-gold);
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--bone);
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin: 0.5rem 0;
+        }
+        .subhead {
+            font-size: 1.15rem;
+            color: var(--gold-soft);
+            max-width: 800px;
+            margin-top: 0.5rem;
+        }
+        .header-nav {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--texas-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .header-nav a:hover,
+        .header-nav a.active { border-bottom-color: var(--texas-gold); }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== ALERT BANNER ===== */
+        .alert-banner {
+            background: linear-gradient(135deg, rgba(198, 162, 60, 0.12), rgba(198, 162, 60, 0.04));
+            border: 1px solid var(--texas-gold);
+            border-left: 6px solid var(--texas-gold);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+        .alert-text {
+            font-size: 0.95rem;
+        }
+        .alert-text strong {
+            color: var(--texas-gold);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== DOCTRINE BANNER ===== */
+        .doctrine-banner {
+            background-color: var(--steel);
+            border: 1px solid var(--texas-gold);
+            border-left: 6px solid var(--texas-gold);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        .doctrine-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--texas-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .doctrine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .badge-verified { background: var(--texas-gold); color: var(--ink); }
+        .badge-contested { background: var(--gold-soft); color: var(--ink); }
+        .badge-false { background: var(--flag-red); color: var(--bone); }
+        .badge-policy { background: #2A6B4F; color: var(--bone); }
+
+        /* ===== SECTIONS ===== */
+        section { margin-bottom: 4rem; }
+        .section-header {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--texas-gold);
+            border-bottom: 1px solid rgba(198, 162, 60, 0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .section-label {
+            font-size: 0.8rem;
+            color: var(--bone);
+        }
+
+        /* ===== DOSSIER CARDS ===== */
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: var(--steel);
+            border: 1px solid rgba(198, 162, 60, 0.25);
+            padding: 1.5rem;
+            transition: border-color 0.2s ease, transform 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            border-color: var(--texas-gold);
+            transform: translateY(-2px);
+        }
+        .card-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--gold-soft);
+            margin-bottom: 0.5rem;
+        }
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--bone);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            color: #CFC9BB;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .card-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--texas-gold);
+            text-decoration: none;
+            font-weight: 700;
+            border-top: 1px solid rgba(198, 162, 60, 0.2);
+            padding-top: 1rem;
+            display: block;
+            transition: color 0.15s ease;
+        }
+        .card-link:hover { color: var(--bone); }
+
+        /* ===== SIX-AXIS COMPACT ===== */
+        .axis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .axis-item {
+            font-size: 0.82rem;
+            color: #CFC9BB;
+            padding: 0.5rem;
+            background: rgba(0,0,0,0.25);
+            border-left: 3px solid var(--texas-gold);
+        }
+        .axis-item strong {
+            color: var(--bone);
+            display: block;
+            font-size: 0.75rem;
+            font-family: 'Space Mono', monospace;
+            margin-bottom: 0.15rem;
+        }
+
+        /* ===== GATED BOX ===== */
+        .gated-box {
+            background-color: rgba(177, 26, 43, 0.1);
+            border: 1px dashed var(--flag-red);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .gated-title {
+            font-family: 'Space Mono', monospace;
+            color: var(--flag-red);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--steel);
+            border-top: 2px solid var(--texas-gold);
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+            color: var(--bone);
+        }
+        .corrections-box {
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        .corrections-box h3 {
+            font-family: 'Space Mono', monospace;
+            color: var(--bone);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .disclaimer-pill {
+            display: inline-block;
+            border: 1px solid var(--bone);
+            padding: 0.5rem 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            margin-top: 1rem;
+            color: var(--bone);
+            letter-spacing: 0.05em;
+        }
+        .footer-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--gold-soft);
+            margin-top: 1.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            header { padding: 1.5rem 4%; }
+            .container { padding: 2rem 4%; }
+            .dossier-grid { grid-template-columns: 1fr; }
+            .doctrine-grid { grid-template-columns: 1fr; }
+            footer { padding: 2rem 4%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="portal-tag">ROT SENTINEL SERIES · INDEPENDENT AUDIT BUREAU</div>
+    <h1>PUBLIC EVIDENCE DOSSIERS</h1>
+    <div class="subhead">Documentary records, grid accountability analysis, and primary source verifications. An inquiry is not an adjudication.</div>
+    <nav class="header-nav">
+        <a href="#energy" class="active">⚡ ENERGY / GRID</a>
+        <a href="#civic">📁 CIVIC ACCOUNTABILITY</a>
+        <a href="#methodology">⚖️ METHODOLOGY</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- CAMPAIGN ENERGY ALERT -->
+    <div class="alert-banner">
+        <span class="alert-icon">⚡</span>
+        <div class="alert-text">
+            <strong>ACTIVE INVESTIGATION: FORT WORTH GRID ACCOUNTABILITY</strong>
+            Data center zoning cases (ZC-26-041 and related proposals) are under active civic scrutiny. Fort Worth Zoning Commission vote scheduled <strong>July 8, 2026</strong>. City Council vote <strong>August 11, 2026</strong>. All dossiers below are compiled from public records and filed municipal documents.
+        </div>
+    </div>
+
+    <!-- METHODOLOGY DOCTRINE -->
+    <div class="doctrine-banner" id="methodology">
+        <div class="doctrine-title">⚖️ METHODOLOGY &amp; EVIDENCE DOCTRINE</div>
+        <p>This bureau operates under strict documentary standards. No public assertion is made without an inline primary source. Every investigation is subject to standing correction protocols. <strong>An inquiry is not an adjudication.</strong></p>
+        
+        <div class="doctrine-grid">
+            <div>
+                <span class="badge badge-verified">VERIFIED</span>
+                <p style="font-size: 0.85rem; color: #CFC9BB;">Multiple independent, credible primary sources agree. Public records substantiated.</p>
+            </div>
+            <div>
+                <span class="badge badge-contested">CONTESTED</span>
+                <p style="font-size: 0.85rem; color: #CFC9BB;">True in part; framing or sub-claims disputed by conflicting official filings or statements.</p>
+            </div>
+            <div>
+                <span class="badge badge-policy">POLICY BRIEF</span>
+                <p style="font-size: 0.85rem; color: #CFC9BB;">Public policy position with sourced analysis. Not a factual investigation — a stated framework.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+            <div class="doctrine-title" style="font-size: 0.9rem; margin-bottom: 0.75rem;">SIX-AXIS EVALUATION FRAMEWORK</div>
+            <div class="axis-grid">
+                <div class="axis-item"><strong>1. SUGGESTIBILITY</strong>Planting verdicts before assessment.</div>
+                <div class="axis-item"><strong>2. FOCUS</strong>Steering attention from contested facts.</div>
+                <div class="axis-item"><strong>3. OPENNESS</strong>Lowering resistance via in-group warmth.</div>
+                <div class="axis-item"><strong>4. CONNECTION</strong>Offering belonging over truth.</div>
+                <div class="axis-item"><strong>5. COMPLIANCE</strong>Commands dressed as virtue.</div>
+                <div class="axis-item"><strong>6. EXPECTANCY</strong>Priming for an undelivered reveal.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TRACK 1: ENERGY / GRID ACCOUNTABILITY ===== -->
+    <section id="energy">
+        <div class="section-header">
+            <span>⚡ TRACK 01 · ENERGY &amp; GRID ACCOUNTABILITY</span>
+            <span class="section-label">PRIMARY FOCUS</span>
+        </div>
+        <div class="dossier-grid">
+            <div class="card">
+                <div>
+                    <div class="card-meta">CASE ID: FF-007 · STATUS: PUBLIC AUDIT RECORD</div>
+                    <span class="badge badge-verified">VERIFIED</span>
+                    <div class="card-title">Black Mountain Data Center Continuance &amp; Grid Load</div>
+                    <div class="card-desc">Examination of ZC-26-041: a 187-acre data center rezoning on Lon Stephenson Road, public campaign finance records for the developer, and the timeline gap between the council vote and the Governor's grid infrastructure directive.</div>
+                </div>
+                <a href="dossiers/grid-cost-shifting.html" class="card-link">VIEW DOSSIER RECORD →</a>
+            </div>
+            
+            <div class="card">
+                <div>
+                    <div class="card-meta">CASE ID: FF-010 · STATUS: PUBLIC AUDIT RECORD</div>
+                    <span class="badge badge-verified">VERIFIED</span>
+                    <div class="card-title">Fort Worth Data Center Lobbying Conflicts — TEC Records Audit</div>
+                    <div class="card-desc">Documentary analysis of Texas Ethics Commission lobbyist registration records showing concurrent lobbying for data center and energy infrastructure interests during municipal zoning actions.</div>
+                </div>
+                <a href="dossiers/lobbying-conflicts.html" class="card-link">VIEW DOSSIER RECORD →</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-meta">CASE ID: FF-011 · STATUS: POLICY BRIEF</div>
+                    <span class="badge badge-policy">POLICY BRIEF</span>
+                    <div class="card-title">Ratepayer Protection Framework — Anti-Cost-Shifting Policy Brief</div>
+                    <div class="card-desc">Three-point framework for protecting residential ratepayers from grid infrastructure cost-shifting: anti-subsidy clauses, enforceable water caps, and transparent public infrastructure portals.</div>
+                </div>
+                <a href="dossiers/ratepayer-protection.html" class="card-link">VIEW POLICY BRIEF →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRACK 2: CIVIC ACCOUNTABILITY ===== -->
+    <section id="civic">
+        <div class="section-header">
+            <span>📁 TRACK 02 · CIVIC ACCOUNTABILITY &amp; TRANSPARENCY</span>
+            <span class="section-label">ONGOING</span>
+        </div>
+
+        <div class="gated-box">
+            <div class="gated-title">🔒 VERIFICATION GATE ACTIVE · PRIMARY SOURCE SUBSTANTIATION REQUIRED</div>
+            <p style="font-size: 0.85rem; color: #CFC9BB;">Additional investigative dossiers are withheld from public indexing until strict primary-source documentation and official filing verification confirm the public record. Dossiers covering unrelated topics (historical analysis, media claim audits) will be published as they clear the verification gate.</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="corrections-box">
+        <h3>STANDING CORRECTIONS MECHANISM</h3>
+        <p>If you identify an error of fact or omitted primary record in any published dossier, submit documented evidence to <strong style="color: var(--texas-gold);">corrections@deadliftradio.com</strong>. All verified corrections are honored promptly and recorded permanently in the public dossier revision log.</p>
+        
+        <div class="disclaimer-pill">
+            DOCUMENTARY ANALYSIS OF PUBLIC RECORDS · SOURCES CITED INLINE · NOT AN ELECTIONEERING COMMUNICATION OR SOLICITATION
+        </div>
+    </div>
+    <div class="footer-meta">
+        ROT SENTINEL AUDIT BUREAU · BRADFORD HALL · FORT WORTH, TX · LAST UPDATED 2026-07-02
+    </div>
+</footer>
+
+</body>
+</html>
