@@ -133,6 +133,21 @@
     opacity:0.7;
   }
 
+  /* ── Hero Image ───────────────────────────── */
+  .hero-image{
+    max-width:var(--measure);
+    margin-bottom:2.2rem;
+    border:1px solid var(--gold-dim);
+    box-shadow:0 4px 20px rgba(0,0,0,0.5);
+    background:var(--void-rise);
+    padding:4px;
+  }
+  .hero-image img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
   /* ── Body ─────────────────────────────────── */
   .body{ max-width:var(--measure); }
 
@@ -270,6 +285,10 @@
         <p class="dateline"><span>July 4, 2026</span><span class="sep">·</span><span>Fort Worth, Texas</span></p>
         <p class="semiquin">1776 — 2026</p>
       </header>
+
+      <div class="hero-image">
+        <img src="tech-priest-og.jpg" alt="The Tech Priest of Liberty">
+      </div>
 
       <section class="body">
         <p class="lede">Two hundred and fifty years ago, a handful of ordinary men put their names to a single dangerous sentence: that governments derive their just powers from the consent of the governed. They were not kings or generals. They were farmers and lawyers and printers who decided that power must answer to the people who grant it. That sentence outlived the empire it defied.</p>
