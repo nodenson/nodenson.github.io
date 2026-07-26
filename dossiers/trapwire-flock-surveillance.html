@@ -94,6 +94,18 @@
         li { margin-bottom: 0.5rem; font-size: 1.02rem; }
 
         /* Inline Source Citation & Highlight Boxes */
+        .source-link {
+            color: var(--texas-gold);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            word-break: break-all;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
+        }
+        .source-link:hover {
+            color: #ffffff;
+            text-decoration-color: var(--texas-gold);
+        }
+
         .source-box {
             background-color: rgba(0, 0, 0, 0.4);
             border-left: 4px solid var(--texas-gold);
@@ -311,21 +323,22 @@
     <!-- SOURCES -->
     <div class="section-box">
         <h2>Primary Sources &amp; References</h2>
-        <div class="sources-list">
-            • Brookings — “TrapWire: It's Not the Surveillance, It's the Sleaze”<br>
-            • Public Intelligence — Abraxas/TrapWire Trademark Filing (PDF)<br>
-            • The Nation — “Private Spies and Our Growing Surveillance State”<br>
-            • ZDNet — “Examining the Ties Between TrapWire, Abraxas, and Anonymizer”<br>
-            • RT — “Secretive TrapWire company's affiliations revealed”<br>
-            • Wikipedia — TrapWire &amp; Ntrepid<br>
-            • TrapWire — Official Company Resources Page<br>
-            • Tech Times — “Flock Safety Crosses 100,000 Cameras as 53 Cities Cancel Over Unauthorized Federal Data Access”<br>
-            • UW Center for Human Rights — “Leaving the Door Wide Open” (Flock/ICE access in Washington State)<br>
-            • ACLU — “Get the Flock Out” Campaign Records<br>
-            • DroneLife — “Flock Safety Secures $275M Funding, Accelerates Drone Expansion”<br>
-            • Bloomberg / Yahoo Finance — “Andreessen Leads Funding Valuing Flock Safety at $7.5 Billion”<br>
-            • EFF — “Hundreds of Drone-as-First-Responder Programs Could Soon Be Launched Across the Country” (July 2026)
-        </div>
+        <ul class="sources-list" style="list-style: none; margin-left: 0;">
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.brookings.edu/articles/trapwire-its-not-the-surveillance-its-the-sleaze/" target="_blank" rel="noopener noreferrer" class="source-link">Brookings — “TrapWire: It's Not the Surveillance, It's the Sleaze”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://publicintelligence.net/abraxas-trapwire-trademark-application/" target="_blank" rel="noopener noreferrer" class="source-link">Public Intelligence — Abraxas / TrapWire Trademark Filing (PDF)</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.thenation.com/article/archive/private-spies-and-our-growing-surveillance-state/" target="_blank" rel="noopener noreferrer" class="source-link">The Nation — “Private Spies and Our Growing Surveillance State”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.zdnet.com/article/examining-the-ties-between-trapwire-abraxas-and-anonymizer/" target="_blank" rel="noopener noreferrer" class="source-link">ZDNet — “Examining the Ties Between TrapWire, Abraxas, and Anonymizer”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.rt.com/usa/trapwire-stratfor-abraxas-anonymizer-739/" target="_blank" rel="noopener noreferrer" class="source-link">RT — “Secretive TrapWire company's affiliations revealed”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://en.wikipedia.org/wiki/TrapWire" target="_blank" rel="noopener noreferrer" class="source-link">Wikipedia — TrapWire Reference Entry</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://en.wikipedia.org/wiki/Ntrepid" target="_blank" rel="noopener noreferrer" class="source-link">Wikipedia — Ntrepid Corporate Lineage</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.trapwire.com/" target="_blank" rel="noopener noreferrer" class="source-link">TrapWire Inc. — Official Company Platform Resources</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.techtimes.com/articles/307890/20260715/flock-safety-cameras-53-cities-cancel.htm" target="_blank" rel="noopener noreferrer" class="source-link">Tech Times — “Flock Safety Crosses 100,000 Cameras as 53 Cities Cancel Over Unauthorized Federal Data Access”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://jsis.washington.edu/humanrights/2025/10/14/leaving-the-door-wide-open-flock-ice/" target="_blank" rel="noopener noreferrer" class="source-link">UW Center for Human Rights — “Leaving the Door Wide Open” (Flock/ICE access in Washington State)</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.aclu.org/news/privacy-technology/get-the-flock-out" target="_blank" rel="noopener noreferrer" class="source-link">ACLU — “Get the Flock Out” ALPR Dragnet Campaign Records</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://dronelife.com/2025/03/18/flock-safety-funding-drone-expansion/" target="_blank" rel="noopener noreferrer" class="source-link">DroneLife — “Flock Safety Secures $275M Funding, Accelerates Drone Expansion”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://finance.yahoo.com/news/andreessen-leads-funding-valuing-flock-140000123.html" target="_blank" rel="noopener noreferrer" class="source-link">Bloomberg / Yahoo Finance — “Andreessen Leads Funding Valuing Flock Safety at $7.5 Billion”</a></li>
+            <li style="margin-bottom: 0.75rem;">• <a href="https://www.eff.org/deeplinks/2026/07/hundreds-drone-first-responder-programs-could-soon-be-launched" target="_blank" rel="noopener noreferrer" class="source-link">EFF — “Hundreds of Drone-as-First-Responder Programs Could Soon Be Launched Across the Country” (July 2026)</a></li>
+        </ul>
     </div>
 
 </div>
