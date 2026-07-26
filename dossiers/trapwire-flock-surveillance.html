@@ -26,9 +26,10 @@
             padding-bottom: 4rem;
         }
         header {
-            background-color: var(--steel);
+            background: radial-gradient(circle at 50% 0%, #1c2734 0%, #0c1014 100%);
             border-bottom: 2px solid var(--texas-gold);
-            padding: 2rem 5%;
+            padding: 2.5rem 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .nav-back {
             font-family: 'Space Mono', monospace;
@@ -36,31 +37,49 @@
             color: var(--texas-gold);
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 700;
+            transition: color 0.15s ease;
         }
-        .nav-back:hover { color: var(--bone); }
+        .nav-back:hover { color: #ffffff; }
         .meta-strip {
             font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
             color: var(--gold-soft);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            color: var(--bone);
-            line-height: 1.15;
-            margin: 0.5rem 0 1rem;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin: 0.6rem 0 1.2rem;
+        }
+        .highlight-gold {
+            color: var(--texas-gold);
+            text-shadow: 0 0 20px rgba(198, 162, 60, 0.2);
+        }
+        .arrow-accent {
+            color: var(--gold-soft);
+            font-weight: 400;
+            margin: 0 0.3rem;
         }
         .badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
             font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            background: var(--texas-gold);
-            color: var(--ink);
+            letter-spacing: 0.06em;
+            padding: 0.35rem 0.85rem;
+            background: rgba(198, 162, 60, 0.12);
+            color: var(--texas-gold);
+            border: 1px solid var(--texas-gold);
+            border-radius: 4px;
             text-transform: uppercase;
         }
         .container {
@@ -170,9 +189,9 @@
 
 <header>
     <a href="../index.html" class="nav-back">← BACK TO DOSSIER INDEX</a>
-    <div class="meta-strip">DOSSIER ID: FF-012 · TRACK: CIVIC ACCOUNTABILITY &amp; SURVEILLANCE · PREPARED FOR BRADFORD — JULY 26, 2026</div>
-    <h1>CROSS-REFERENCE MEMO: TRAPWIRE / ABRAXAS / ANONYMIZER → FLOCK SAFETY ALPR &amp; POLICE DRONES</h1>
-    <span class="badge">VERIFIED BY PUBLIC RECORD</span>
+    <div class="meta-strip">DOSSIER ID: FF-012 · TRACK 02 · CIVIC ACCOUNTABILITY &amp; SURVEILLANCE · PREPARED FOR BRADFORD — JULY 26, 2026</div>
+    <h1>Cross-Reference Memo: <span class="highlight-gold">TrapWire / Abraxas / Anonymizer</span> <span class="arrow-accent">→</span> <span class="highlight-gold">Flock Safety ALPR &amp; Police Drones</span></h1>
+    <span class="badge">⚖ VERIFIED BY PUBLIC RECORD</span>
 </header>
 
 <div class="container">
