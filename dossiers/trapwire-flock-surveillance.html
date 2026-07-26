@@ -183,6 +183,53 @@
             line-height: 1.8;
             color: var(--gold-soft);
         }
+
+        /* Financial & Capital Scale Stat Grid */
+        .financial-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(27, 39, 51, 0.9) 0%, rgba(12, 16, 20, 0.95) 100%);
+            border: 1px solid rgba(198, 162, 60, 0.35);
+            border-top: 3px solid var(--texas-gold);
+            border-radius: 6px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--texas-gold);
+            box-shadow: 0 8px 25px rgba(198, 162, 60, 0.25);
+        }
+        .stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--gold-soft);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+        .stat-value {
+            font-family: 'Barlow', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--texas-gold);
+            line-height: 1.1;
+            margin-bottom: 0.35rem;
+            text-shadow: 0 0 15px rgba(198, 162, 60, 0.3);
+        }
+        .stat-sub {
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.85rem;
+            color: var(--bone);
+            opacity: 0.85;
+        }
     </style>
 </head>
 <body>
@@ -235,8 +282,32 @@
 
     <!-- PART 3 -->
     <div class="section-box">
-        <h2>Part 3 — Flock Safety: The Current ALPR Network</h2>
-        <p>Flock Safety has deployed 100,000+ AI license-plate-reading cameras across the U.S. as of mid-2026, partnering with roughly 4,800–5,000 law-enforcement agencies. It raised $275M in March 2025 led by Andreessen Horowitz at a $7.5 billion valuation, with over $300M in annual recurring revenue. Every scan uploads to a nationwide, cross-jurisdiction searchable database.</p>
+        <h2>Part 3 — Flock Safety: Capital Scale &amp; The Current ALPR Network</h2>
+        <p>Flock Safety has deployed 100,000+ AI license-plate-reading cameras across the U.S. as of mid-2026, partnering with roughly 4,800–5,000 law-enforcement agencies. Every scan uploads to a nationwide, cross-jurisdiction searchable database.</p>
+
+        <!-- FINANCIAL & CAPITAL STAT GRID -->
+        <div class="financial-stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">COMPANY VALUATION</div>
+                <div class="stat-value">$7.5B</div>
+                <div class="stat-sub">Series F · Andreessen Horowitz</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">CAPITAL RAISED</div>
+                <div class="stat-value">$275M</div>
+                <div class="stat-sub">March 2025 · DFR Drone Funding</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">ANNUAL REVENUE (ARR)</div>
+                <div class="stat-value">$300M+</div>
+                <div class="stat-sub">Municipal Recurring Subscriptions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">ACTIVE FOOTPRINT</div>
+                <div class="stat-value">100k+</div>
+                <div class="stat-sub">ALPR Cameras · 5,000 Agencies</div>
+            </div>
+        </div>
         
         <h3>The scandal shape is nearly identical to TrapWire's</h3>
         <p>The core issue is not “does the camera work”—it is undisclosed/unauthorized data access:</p>
